@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 // Images
@@ -18,6 +18,16 @@ import deepak from "../../../assets/Images/Team/Deepak.jpg";
 import teamBanner from "../../../assets/Images/Team/D2team-modified.JPG";
 
 const Team = () => {
+
+  const [flippedCards, setFlippedCards] = useState({});
+
+  const toggleFlip = (key) => {
+    setFlippedCards((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
   const founders = [
     {
       name: "Divakaran G.M",
@@ -50,7 +60,7 @@ const Team = () => {
       description:
         "Manages financial operations, documentation, and budget planning with precision and responsibility.",
     },
-    
+
     {
       name: "Jifin Hussain",
       title: "Junior Architect",
@@ -197,18 +207,21 @@ const Team = () => {
 
           <div className="lg:w-1/2 flex flex-wrap justify-center gap-6 px-4">
             {founders.map((founder, index) => (
-              <motion.div
-                key={founder.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="w-[260px] h-[320px] group"
-                style={{ perspective: "1000px" }}
-              >
-                <div
-                  className="relative w-full h-full transition-transform duration-700 group-hover:rotate-y-180"
-                  style={{ transformStyle: "preserve-3d" }}
-                >
+  <motion.div
+    key={founder.name}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4, delay: index * 0.1 }}
+    className="w-[260px] h-[320px] group"
+    style={{ perspective: "1000px" }}
+  >
+    <div
+      onClick={() => toggleFlip(`founder-${index}`)}
+      className={`relative w-full h-full transition-transform duration-700 
+      ${flippedCards[`founder-${index}`] ? "rotate-y-180" : ""}
+      md:group-hover:rotate-y-180`}
+      style={{ transformStyle: "preserve-3d" }}
+    >
                   {/* Front */}
                   <div
                     className="absolute inset-0 rounded-xl overflow-hidden border border-white/15"
@@ -256,19 +269,22 @@ const Team = () => {
         </motion.div>
 
         <div className="grid gap-8 sm:gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-2 md:px-0">
-          {professionals.map((member, idx) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: idx * 0.06 }}
-              className="w-full h-[300px] sm:h-[340px] group"
-              style={{ perspective: "1000px" }}
-            >
-              <div
-                className="relative w-full h-full transition-transform duration-700 group-hover:rotate-y-180"
-                style={{ transformStyle: "preserve-3d" }}
-              >
+       {professionals.map((member, idx) => (
+  <motion.div
+    key={member.name}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.3, delay: idx * 0.06 }}
+    className="w-full h-[300px] sm:h-[340px] group"
+    style={{ perspective: "1000px" }}
+  >
+    <div
+      onClick={() => toggleFlip(`member-${idx}`)}
+      className={`relative w-full h-full transition-transform duration-700 
+      ${flippedCards[`member-${idx}`] ? "rotate-y-180" : ""}
+      md:group-hover:rotate-y-180`}
+      style={{ transformStyle: "preserve-3d" }}
+    >
                 {/* Front */}
                 <div
                   className="absolute inset-0 rounded-xl overflow-hidden border border-white/12"

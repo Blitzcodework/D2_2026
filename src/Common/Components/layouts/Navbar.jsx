@@ -47,7 +47,6 @@ const Navbar = () => {
     { label: "Portfolio", path: "/main/Portfolio" },
     { label: "Team", path: "/main/TeamD2" },
     { label: "Testimonial", path: "/main/Testimonial" },
-    { label: "Services", path: "/main/Service1" },
   ];
 
   const serviceLinks = [
@@ -60,7 +59,7 @@ const Navbar = () => {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-md pointer-events-auto">
+      <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10 py-3.5">
 
           {/* LOGO */}
@@ -85,7 +84,7 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* SERVICES DROPDOWN */}
+            {/* SERVICES DROPDOWN (DESKTOP) */}
             <div
               className="relative"
               onMouseEnter={openDropdown}
@@ -139,6 +138,7 @@ const Navbar = () => {
       {/* MOBILE MENU */}
       {isMobileMenuOpen && (
         <div className="fixed top-[88px] left-0 right-0 z-50 bg-black border-t border-white/10 px-6 py-6 space-y-3 lg:hidden">
+
           {navLinks.map((link) => (
             <Link
               key={link.label}
@@ -150,6 +150,37 @@ const Navbar = () => {
             </Link>
           ))}
 
+          {/* MOBILE SERVICES */}
+          <div className="border-t border-white/10 pt-3">
+            <button
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+              className="flex justify-between items-center w-full py-3 text-white/90 text-sm uppercase"
+            >
+              Services
+              <FaChevronDown
+                className={`text-xs transition-transform ${
+                  isServicesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {isServicesOpen && (
+              <div className="pl-4 space-y-2">
+                {serviceLinks.map((service) => (
+                  <Link
+                    key={service.label}
+                    to={service.path}
+                    onClick={closeMobileMenu}
+                    className="block py-2 text-white/70 text-sm"
+                  >
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* MOBILE CONTACT */}
           <button
             onClick={handleContactClick}
             className="w-full mt-4 rounded-full bg-gradient-to-r from-[#FF8C00] to-[#FF7000] py-3 text-sm font-semibold uppercase text-white"

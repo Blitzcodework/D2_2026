@@ -31,11 +31,21 @@ import img26 from "../../../assets/Commercial/WATER LILLY/Exterior/Exterior1.jpg
 import img27 from "../../../assets/Commercial/Raffles/Exterior/Exterior1.png";
 
 const Portfolio = () => {
+
+  const [flippedCards, setFlippedCards] = useState({});
+
+  const toggleFlip = (key) => {
+    setFlippedCards((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
   const [activeTab, setActiveTab] = useState("ALL");
   const [visibleCount, setVisibleCount] = useState(9);
   const navigate = useNavigate();
 
-  const tabs = ["ALL", "RESIDENTIAL", "COMMERCIAL", "HOSPITALITY","RELIGIOUS"];
+  const tabs = ["ALL", "RESIDENTIAL", "COMMERCIAL", "HOSPITALITY", "RELIGIOUS"];
 
   const images = [
     {
@@ -270,8 +280,8 @@ const Portfolio = () => {
             <span>Our Portfolio</span>
           </div>
 
-          <h1            className="mt-8 text-3xl sm:text-4xl md:text-5xl   tracking-[0.28em] uppercase"
->
+          <h1 className="mt-8 text-3xl sm:text-4xl md:text-5xl   tracking-[0.28em] uppercase"
+          >
             Portfolio
           </h1>
         </header>
@@ -311,11 +321,10 @@ const Portfolio = () => {
                     setActiveTab(tab);
                     setVisibleCount(9);
                   }}
-                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm md:text-[13px] tracking-[0.18em] uppercase transition-all duration-300 border ${
-                    isActive
-                      ? "bg-white text-black border-white shadow-[0_18px_45px_rgba(0,0,0,0.6)]"
-                      : "border-white/25 text-white/65 hover:text-white hover:border-white/60"
-                  }`}
+                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm md:text-[13px] tracking-[0.18em] uppercase transition-all duration-300 border ${isActive
+                    ? "bg-white text-black border-white shadow-[0_18px_45px_rgba(0,0,0,0.6)]"
+                    : "border-white/25 text-white/65 hover:text-white hover:border-white/60"
+                    }`}
                 >
                   {tab}
                 </button>
@@ -330,23 +339,27 @@ const Portfolio = () => {
             {visibleImages.map((img, idx) => (
               <div
                 key={idx}
-                className="group w-full cursor-pointer [perspective:1100px]"
-                onClick={() => handleImageClick(img.link)}
+                className="w-full cursor-pointer [perspective:1100px]"
+                onClick={() => toggleFlip(`project-${idx}`)}
               >
                 <div
-                  className="relative w-full aspect-[4/3] transition-transform duration-[800ms]
-                             [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+                  className={`relative w-full aspect-[4/3] transition-transform duration-[800ms]
+                  [transform-style:preserve-3d]
+                  ${flippedCards[`project-${idx}`]
+                      ? "[transform:rotateY(180deg)]"
+                      : ""
+                    }`}
                 >
-                  {/* FRONT SIDE */}
+                  {/* FRONT */}
                   <div
                     className="absolute inset-0 rounded-[28px] overflow-hidden 
-                               shadow-[0_20px_60px_rgba(0,0,0,0.9)] bg-black
-                               border border-white/12 [backface-visibility:hidden]"
+                   shadow-[0_20px_60px_rgba(0,0,0,0.9)] bg-black
+                   border border-white/12 [backface-visibility:hidden]"
                   >
                     <img
                       src={img.src}
                       alt={img.title}
-                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.05]"
+                      className="w-full h-full object-cover transition-all duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 px-4 pb-4">
@@ -356,14 +369,14 @@ const Portfolio = () => {
                     </div>
                   </div>
 
-                  {/* BACK SIDE */}
+                  {/* BACK */}
                   <div
                     className="absolute inset-0 rounded-[28px] overflow-hidden 
-                               shadow-[0_22px_70px_rgba(0,0,0,1)]
-                               bg-gradient-to-b from-white/10 via-black to-black 
-                               border border-white/15 flex flex-col items-center justify-center
-                               text-center px-5 sm:px-6
-                               [backface-visibility:hidden] [transform:rotateY(180deg)]"
+                   shadow-[0_22px_70px_rgba(0,0,0,1)]
+                   bg-gradient-to-b from-white/10 via-black to-black 
+                   border border-white/15 flex flex-col items-center justify-center
+                   text-center px-5 sm:px-6
+                   [backface-visibility:hidden] [transform:rotateY(180deg)]"
                   >
                     <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-3 tracking-wide">
                       {img.title}
