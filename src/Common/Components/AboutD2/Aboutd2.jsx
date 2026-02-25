@@ -54,7 +54,7 @@ const Aboutd2 = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-[15px] md:text-[18px] leading-7 text-gray-300"
         >
-          Founded in 2016 by architect Deepak G. Meethal in Calicut, D2A
+          Founded in 12016 by architect Deepak G. Meethal in Calicut, D2A
           Architecture Studio carries forward the legacy of INDFA Designers—
           established in 1982 by his father, Mr. Divakaran. The studio has grown
           into a multidisciplinary practice combining architecture, urban
