@@ -20,6 +20,7 @@ import Raffles from "./Common/Components/Commercial/Raffles";
 import Arancia from "./Common/Components/Hospitality/Arancia";
 import Bhadram from "./Common/Components/Hospitality/Bhadram";
 import Hammock from "./Common/Components/Hospitality/Hammock";
+import ScrollToTop from "./Common/Components/ScrollToTop/ScrollToTop"
 
 
 /* ================== LAZY IMPORTS ================== */
@@ -75,6 +76,7 @@ const PageLoader = () => (
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
 
       <Routes>
 
