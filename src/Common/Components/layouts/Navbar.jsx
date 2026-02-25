@@ -18,13 +18,33 @@ const Navbar = () => {
 
   useEffect(() => {
   if (isMobileMenuOpen) {
-    document.body.style.overflow = "hidden";
+    const scrollY = window.scrollY;
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
   } else {
-    document.body.style.overflow = "auto";
+    const scrollY = document.body.style.top;
+    
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
+
+    if (scrollY) {
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    }
   }
 
   return () => {
-    document.body.style.overflow = "auto";
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
   };
 }, [isMobileMenuOpen]);
 
@@ -149,8 +169,8 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-black/95 pt-[88px] px-6 py-6 space-y-3 lg:hidden overflow-y-auto">
-
+<div className="fixed inset-0 z-40 bg-black/95 lg:hidden">
+  <div className="mt-[88px] px-6 py-6 space-y-3 overflow-y-auto h-[calc(100vh-88px)]">
           {navLinks.map((link) => (
             <Link
               key={link.label}
@@ -199,6 +219,7 @@ const Navbar = () => {
           >
             Contact Us
           </button>
+        </div>
         </div>
       )}
 
