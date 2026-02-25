@@ -12,13 +12,12 @@ import TestimonialsModern from "../../Testimonial/Testimonial";
 const ArchitectureSlider = () => {
   const [current, setCurrent] = useState(0);
 
-  const images = [
-    "/src/assets/images/slide1.png",
-    "/src/assets/images/slide2.png",
-    "/src/assets/images/slide3.png",
-    "/src/assets/images/slide4.png",
-  ];
-
+const images = [
+  "/images/slide1.png",
+  "/images/slide2.png",
+  "/images/slide3.png",
+  "/images/slide4.png"
+];
   // Auto-slide every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
