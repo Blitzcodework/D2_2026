@@ -47,6 +47,7 @@ const Navbar = () => {
     { label: "Portfolio", path: "/main/Portfolio" },
     { label: "Team", path: "/main/TeamD2" },
     { label: "Testimonial", path: "/main/Testimonial" },
+    { label: "Services", path: "/main/Service1" },
   ];
 
   const serviceLinks = [
