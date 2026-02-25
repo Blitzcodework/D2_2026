@@ -1,12 +1,12 @@
 import React from "react";
 import ProjectCommonLayout from "./ProjectCommonLayout";
 import bannerImage from "../../../../assets/Residential/inea/Sequence 01.mp4"
-import g1 from "../../../../assets/Residential/inea/Exterior/Exterior2.png"
-import g2 from "../../../../assets/Residential/inea/Exterior/Exterior1.png"
-import g3 from "../../../../assets/Residential/inea/Interior/Interior2.png"
-import g4 from "../../../../assets/Residential/inea/Interior/Interior3.png"
-import g5 from "../../../../assets/Residential/inea/Interior/Interior4.png"
-import g6 from "../../../../assets/Residential/inea/Interior/Interior5.png"
+import g1 from "../../../../assets/Residential/inea/exterior/Exterior2.png"
+import g2 from "../../../../assets/Residential/inea/exterior/Exterior1.png"
+import g3 from "../../../../assets/Residential/inea/interior/Interior2.png"
+import g4 from "../../../../assets/Residential/inea/interior/Interior3.png"
+import g5 from "../../../../assets/Residential/inea/interior/Interior4.png"
+import g6 from "../../../../assets/Residential/inea/interior/Interior5.png"
 
 
 

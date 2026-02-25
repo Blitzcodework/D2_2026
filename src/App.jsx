@@ -17,6 +17,9 @@ import Church from "./Common/Components/Religious/Church";
 import EvaraWaters from "./Common/Components/Commercial/EvaraWaters";
 import WaterLilly from "./Common/Components/Commercial/WaterLilly";
 import Raffles from "./Common/Components/Commercial/Raffles";
+import Arancia from "./Common/Components/Hospitality/Arancia";
+import Bhadram from "./Common/Components/Hospitality/Bhadram";
+import Hammock from "./Common/Components/Hospitality/Hammock";
 
 
 /* ================== LAZY IMPORTS ================== */
@@ -157,6 +160,9 @@ const App = () => {
           <Route path="EvaraWaters" element={<Suspense fallback={<PageLoader />}><EvaraWaters /></Suspense>} />
           <Route path="WaterLilly" element={<Suspense fallback={<PageLoader />}><WaterLilly /></Suspense>} />
           <Route path="Raffles" element={<Suspense fallback={<PageLoader />}><Raffles /></Suspense>} />
+          <Route path="Arancia" element={<Suspense fallback={<PageLoader />}><Arancia /></Suspense>} />
+          <Route path="Bhadram" element={<Suspense fallback={<PageLoader />}><Bhadram /></Suspense>} />
+          <Route path="Hammock" element={<Suspense fallback={<PageLoader />}><Hammock /></Suspense>} />
 
           {/* TEAM & TESTIMONIAL */}
           <Route path="TeamD2" element={<Suspense fallback={<PageLoader />}><TeamD2 /></Suspense>} />

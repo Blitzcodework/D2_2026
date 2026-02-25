@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectCommonLayout from "../../../Common/Components/Portfolio/ProjectDetails/ProjectCommonLayout";
 
-import bannerImage from "../../../assets/HospitalityProjects/Arancia/Exterior/Exterior1.png";
+import bannerImage from "../../../assets/HospitalityProjects/Arancia/Sequence 01.mp4";
 import g1 from "../../../assets/HospitalityProjects/Arancia/Exterior/Exterior1.png";
 import g2 from "../../../assets/HospitalityProjects/Arancia/Exterior/Exterior2.png";
 import g3 from "../../../assets/HospitalityProjects/Arancia/Interior/Interior1.png";
