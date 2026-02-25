@@ -16,7 +16,7 @@ import img11 from "../../../assets/HospitalityProjects/Hammock/exterior/Exterior
 import img12 from "../../../assets/Residential/Pink&Purple/Exterior1.jpg";
 import img13 from "../../../assets/Residential/amaanath/Exterior1.jpg";
 import img14 from "../../../assets/Residential/castle/Exterior/Exterior1.png";
-import img15 from "../../../assets/Residential/Himadri/Exterior/Exterior1.png";
+import img15 from "../../../assets/Residential/himadri/Exterior/Exterior1.png";
 import img16 from "../../../assets/Residential/kottagiri/Exterior/Exterior1.png";
 import img17 from "../../../assets/Residential/krishna/exterior/Exterior1.png";
 import img18 from "../../../assets/Residential/mr.noble/exterior/Exterior1.png";
