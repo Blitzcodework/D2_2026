@@ -16,16 +16,8 @@ const Navbar = () => {
     };
   }, []);
 
-  useEffect(() => {
-  if (isMobileMenuOpen) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
-
-  return () => {
-    document.body.style.overflow = "auto";
-  };
+useEffect(() => {
+  document.body.classList.toggle("overflow-hidden", isMobileMenuOpen);
 }, [isMobileMenuOpen]);
 
   const openDropdown = () => {
