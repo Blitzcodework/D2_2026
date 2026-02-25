@@ -3,10 +3,10 @@ import ProjectCommonLayout from "./ProjectCommonLayout";
 import bannerImage from "../../../../assets/Residential/yaraa/Sequence 01.mp4"
 import g1 from "../../../../assets/Residential/yaraa/exterior/Exterior2.png"
 import g2 from "../../../../assets/Residential/yaraa/exterior/Exterior1.png"
-import g3 from "../../../../assets/Residential/yaraa/Interior/Interior2.png"
-import g4 from "../../../../assets/Residential/yaraa/Interior/Interior3.png"
-import g5 from "../../../../assets/Residential/yaraa/Interior/Interior4.png"
-import g6 from "../../../../assets/Residential/yaraa/Interior/Interior5.png"
+import g3 from "../../../../assets/Residential/yaraa/interior/Interior1.png"
+import g4 from "../../../../assets/Residential/yaraa/interior/Interior3.png"
+import g5 from "../../../../assets/Residential/yaraa/interior/Interior4.png"
+import g6 from "../../../../assets/Residential/yaraa/interior/Interior5.png"
 
 
 
