@@ -1,8 +1,8 @@
 import React from "react";
 import ProjectCommonLayout from "./ProjectCommonLayout";
-import bannerImage from "../../../../assets/Residential/vannagha/Sequence 01.mov"
-import g1 from "../../../../assets/Residential/vannagha/exterior/Exterior2.png"
-import g2 from "../../../../assets/Residential/vannagha/exterior/Exterior1.png"
+import bannerImage from "../../../../assets/Residential/vannagha/Sequence01.mp4"
+import g1 from "../../../../assets/Residential/vannagha/exterior/Exterior1.png"
+import g2 from "../../../../assets/Residential/vannagha/exterior/Exterior2.png"
 import g3 from "../../../../assets/Residential/vannagha/interior/Interior2.png"
 import g4 from "../../../../assets/Residential/vannagha/interior/Interior3.png"
 import g5 from "../../../../assets/Residential/vannagha/interior/Interior4.png"
