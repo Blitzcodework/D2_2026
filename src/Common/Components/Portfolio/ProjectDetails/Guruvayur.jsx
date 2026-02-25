@@ -2,10 +2,10 @@ import React from "react";
 import ProjectCommonLayout from "./ProjectCommonLayout";
 import bannerImage from "../../../../assets/Residential/guruvayur/Sequence 01.mp4"
 import g1 from "../../../../assets/Residential/guruvayur/Exterior/Exterior2.png"
-import g2 from "../../../../assets/Residential/guruvayur/Interior/Interior1.png"
-import g3 from "../../../../assets/Residential/guruvayur/Interior/Interior2.png"
-import g4 from "../../../../assets/Residential/guruvayur/Interior/Interior3.png"
-import g5 from "../../../../assets/Residential/guruvayur/Interior/Interior4.png"
+import g2 from "../../../../assets/Residential/guruvayur/interior/Interior1.png"
+import g3 from "../../../../assets/Residential/guruvayur/interior/Interior2.png"
+import g4 from "../../../../assets/Residential/guruvayur/interior/Interior3.png"
+import g5 from "../../../../assets/Residential/guruvayur/interior/Interior4.png"
 import g6 from "../../../../assets/Residential/guruvayur/Exterior/Exterior1.png"
 
 
