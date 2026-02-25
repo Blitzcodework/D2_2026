@@ -1,0 +1,6 @@
+project name - Inea
+site -   coimbatore  
+sqft - 12810
+type - Residence
+year of completion  -2025
+detail ( sir )

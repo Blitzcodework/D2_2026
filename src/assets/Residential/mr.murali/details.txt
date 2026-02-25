@@ -1,0 +1,6 @@
+project name - Mano
+site - chennai ,tamil nadu  
+sqft - 6500 
+type - Residence
+year of completion  -2022
+detail ( sir )

@@ -1,0 +1,6 @@
+project name - Residence for Mr. Noble 
+site -   peravoor , kannur 
+sqft - 13860
+type - Residence
+year of completion  -2019
+detail ( sir )

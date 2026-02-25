@@ -1,0 +1,6 @@
+project name - 
+site - 
+sqft - 
+type - Residence
+year of completion  -2023 
+detail ( sir )
