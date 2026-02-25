@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCommonLayout from "./ProjectCommonLayout";
-import bannerImage from "../../../../assets/Residential/shekhar/Sequence 01.mp4"
+import bannerImage from "../../../../assets/Residential/shekhar/Sequence 01.mov"
 import g1 from "../../../../assets/Residential/shekhar/Exterior/Exterior1.png"
 import g2 from "../../../../assets/Residential/shekhar/interior/Interior1.png"
 import g3 from "../../../../assets/Residential/shekhar/interior/Interior2.png"

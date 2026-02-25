@@ -2,13 +2,14 @@ import React from "react";
 import DetailCommonLayout from "../../../Common/Components/ServiceDetails/DetailCommonLayout";
 
 // ✅ Import all images properly
-import heroImage from "../../../assets/Images/Designs/Urban/uimg1.jpg";
-import g1 from "../../../assets/Images/Designs/Urban/g1.jpg";
-import g2 from "../../../assets/Images/Designs/Urban/g2.jpg";
-import g3 from "../../../assets/Images/Designs/Urban/g3.jpg";
-import g4 from "../../../assets/Images/Designs/Urban/g4.jpg";
-import g5 from "../../../assets/Images/Designs/Urban/g5.jpg";
-import g6 from "../../../assets/Images/Designs/Urban/g6.jpg";
+import heroImage from "../../../assets/Images/Designs/Project Mngmnt/pimg1.jpg";
+import g1 from "../../../assets/Images/Designs/Project Mngmnt/p1.jpg";
+import g2 from "../../../assets/Images/Designs/Project Mngmnt/p2.jpg";
+import g3 from "../../../assets/Images/Designs/Project Mngmnt/p3.jpg";
+import g4 from "../../../assets/Images/Designs/Project Mngmnt/p4.jpg";
+import g5 from "../../../assets/Images/Designs/Project Mngmnt/p5.jpg";
+import g6 from "../../../assets/Images/Designs/Project Mngmnt/p6.jpg";
+
 
 const galleryImages = [g1, g2, g3, g4, g5, g6];
 
