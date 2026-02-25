@@ -16,6 +16,18 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+  if (isMobileMenuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [isMobileMenuOpen]);
+
   const openDropdown = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setIsServicesOpen(true);
