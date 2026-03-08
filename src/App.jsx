@@ -62,6 +62,8 @@ const ShekharResidence = lazy(() => import("./Common/Components/Portfolio/Projec
 const Mano = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/Mano"));
 const Pinkpurple = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/Pinkpurple"));
 
+
+
 /* TEAM & OTHERS */
 const TeamD2 = lazy(() => import("./Common/Components/Team/TeamD2"));
 const Testimonial = lazy(() => import("./Common/Testimonial/Testimonial"));
@@ -165,6 +167,7 @@ const App = () => {
           <Route path="Arancia" element={<Suspense fallback={<PageLoader />}><Arancia /></Suspense>} />
           <Route path="Bhadram" element={<Suspense fallback={<PageLoader />}><Bhadram /></Suspense>} />
           <Route path="Hammock" element={<Suspense fallback={<PageLoader />}><Hammock /></Suspense>} />
+
 
           {/* TEAM & TESTIMONIAL */}
           <Route path="TeamD2" element={<Suspense fallback={<PageLoader />}><TeamD2 /></Suspense>} />

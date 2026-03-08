@@ -21,10 +21,10 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "Chalappuram, Kozhikode" },
+  { label: "Location", value: "Periya , Wayanad , Kerala" },
   { label: "Type", value: "Hospitality Project" },
-  { label: "Year", value: "2024" },
-  { label: "Sqft", value: "3684" },
+  { label: "Year", value: "" },
+  { label: "Sqft", value: "94732" },
 ];
 
 // ✅ Description
@@ -36,7 +36,7 @@ const description = [
 const Arancia = () => {
   return (
     <ProjectCommonLayout
-      title="Arancia Hospitality"
+      title="Arancia"
       bannerImage={bannerImage}
       projectDetails={projectDetails}
       description={description}

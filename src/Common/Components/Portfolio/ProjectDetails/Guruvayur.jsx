@@ -23,7 +23,7 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "Guruvayur" },
+  { label: "Location", value: "Guruvayur , Thrissur , Kerala" },
   { label: "Type", value: "Residential Complex " },
   { label: "Year", value: "2023" },
  
@@ -38,7 +38,7 @@ const description = [
 const Guruvayur = () => {
   return (
     <ProjectCommonLayout
-      title="Guruvayur Residence"
+      title="Kalindi"
       bannerImage={bannerImage}
       projectDetails={projectDetails}
       description={description}

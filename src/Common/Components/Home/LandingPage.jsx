@@ -30,7 +30,7 @@ const images = [
   const handleDotClick = (index) => setCurrent(index);
 
   return (
-    <div className="w-full min-h-screen bg-white overflow-x-hidden">
+    <div className="w-full min-h-screen bg-white overflow-x-hidden border-4">
       {/* ======================
            FULLSCREEN SLIDER
       ======================= */}

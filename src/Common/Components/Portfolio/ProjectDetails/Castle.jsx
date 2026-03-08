@@ -23,7 +23,7 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "Kottagiri  ,Tamilnadu" },
+  { label: "Location", value: "Kotagiri  ,Tamilnadu" },
   { label: "Type", value: "Residential  " },
   { label: "Year", value: "2022" },
   { label: "Sqft", value: "2655" },

@@ -21,19 +21,19 @@ const galleryImages = [
 
 const projectDetails = [
   { label: "Location", value: "Chalappuram, Kozhikode" },
-  { label: "Type", value: "Hospitality Project" },
+  { label: "Type", value: "Convention Center" },
   { label: "Year", value: "2024" },
-  { label: "Sqft", value: "3684" },
+  { label: "Sqft", value: "" },
 ];
 
 const description = [
-  "This hospitality project combines timeless architecture with modern functionality, creating a serene and inviting environment. Carefully planned interiors and elegant exteriors reflect a perfect blend of comfort, aesthetics, and sophistication—ideal for premium guest experiences."
+  "This convention center combines striking architecture with modern functionality, offering a refined and versatile space for conferences, exhibitions, and premium events."
 ];
 
 const Bhadram = () => {
   return (
     <ProjectCommonLayout
-      title="Bhadram Hospitality"
+      title="Bhadram "
       bannerImage={bannerImage}
       projectDetails={projectDetails}
       description={description}

@@ -5,7 +5,7 @@ const ProjectCommonLayout = ({
   bannerImage = "",
   projectDetails = [],
   description = [],
-  // brochureText = "DOWNLOAD BROCHURE",
+  // brochureText = "",
   // brochureFile = "/Ticket-TK718784311D84.pdf",
   galleryTabs = ["All", "Exterior", "Interior"],
   galleryImages = [],
@@ -111,7 +111,7 @@ const ProjectCommonLayout = ({
         )}
 
         {/* Project Description + Brochure CTA */}
-        {/* {(description.length > 0 || brochureText) && (
+        {(description.length > 0 || brochureText) && (
           <section className="mb-12 md:mb-14">
             <div className="max-w-4xl mx-auto space-y-5">
               {description.map((para, idx) => (
@@ -123,7 +123,7 @@ const ProjectCommonLayout = ({
                 </p>
               ))}
 
-              {brochureText && (
+              {/* {brochureText && (
                 <div className="mt-6 flex justify-center">
                   <button
                     onClick={handleDownload}
@@ -132,10 +132,10 @@ const ProjectCommonLayout = ({
                     {brochureText}
                   </button>
                 </div>
-              )}
+              )} */}
             </div>
           </section>
-        )} */}
+        )}
 
         {/* Gallery Section */}
         <section className="mb-12 md:mb-14">

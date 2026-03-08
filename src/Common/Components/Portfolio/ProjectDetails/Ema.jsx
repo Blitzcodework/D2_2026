@@ -32,7 +32,7 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "chalappuram  ,kozhikode" },
+  { label: "Location", value: "Chalappuram , Kozhikode , Kerala" },
   { label: "Type", value: "Residential Complex " },
   { label: "Year", value: "2024" },
   { label: "Sqft", value: "3684" },
@@ -47,7 +47,7 @@ const description = [
 const Ema = () => {
   return (
     <ProjectCommonLayout
-      title="Ema Residence"
+      title="Ema "
       bannerImage={bannerImage}
       projectDetails={projectDetails}
       description={description}

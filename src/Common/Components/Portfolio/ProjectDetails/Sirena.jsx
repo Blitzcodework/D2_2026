@@ -22,7 +22,7 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "Injampakkam , chennai" },
+  { label: "Location", value: "Injampakkam , Chennai , Tamilnadu" },
   { label: "Type", value: "Residential Complex " },
   { label: "Year", value: "2024" },
   { label: "Sqft", value: "17785" },

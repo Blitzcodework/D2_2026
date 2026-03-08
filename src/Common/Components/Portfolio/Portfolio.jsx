@@ -7,10 +7,10 @@ import img2 from "../../../assets/Residential/ema/Exterior/Exterior1.png";
 import img3 from "../../../assets/Residential/fizal/Exterior/Exterior1.png";
 import img4 from "../../../assets/Residential/guruvayur/Exterior/Exterior1.png";
 import img5 from "../../../assets/Residential/inea/exterior/Exterior1.png";
-import img6 from "../../../assets/Residential/vannagha/exterior/Exterior1.png";
-import img7 from "../../../assets/Residential/yaraa/exterior/Exterior1.png";
+import img6 from "../../../assets/Residential/vannagha/Exterior/Exterior1.png";
+import img7 from "../../../assets/Residential/yaraa/Exterior/Exterior1.png";
 import img8 from "../../../assets/Residential/shekhar/Exterior/Exterior1.png";
-import img9 from "../../../assets/Residential/mr.murali/exterior/Exterior1.png";
+import img9 from "../../../assets/HospitalityProjects/Arancia/Exterior/Exterior1.png";
 import img10 from "../../../assets/HospitalityProjects/Bhadram/Exterior/f1.jpg";
 import img11 from "../../../assets/HospitalityProjects/Hammock/exterior/Exterior1.jpg";
 import img12 from "../../../assets/Residential/Pink&Purple/Exterior1.jpg";
@@ -20,37 +20,19 @@ import img15 from "../../../assets/Residential/himadri/Exterior/Exterior1.png";
 import img16 from "../../../assets/Residential/kottagiri/Exterior/Exterior1.png";
 import img17 from "../../../assets/Residential/krishna/exterior/Exterior1.png";
 import img18 from "../../../assets/Residential/mr.noble/exterior/Exterior1.png";
-import img19 from "../../../assets/Residential/mr.sunny/exterior/Exterior1.png";
-import img20 from "../../../assets/Residential/najeeb/exterior/Exterior1.png";
-import img21 from "../../../assets/Residential/rejeendran/Exterior/Exterior1.png";
-import img22 from "../../../assets/Residential/VIPIN THOMAS/Exterior/Exterior1.jpeg";
-import img23 from "../../../assets/Commercial/Amancay/Exterior/Exterior1.png";
-import img24 from "../../../assets/Commercial/Church/exterior/Exterior1.jpg";
-import img25 from "../../../assets/Commercial/Evara/exterior/Exterior1.png";
-import img26 from "../../../assets/Commercial/WATER LILLY/Exterior/Exterior1.jpg";
-import img27 from "../../../assets/Commercial/Raffles/Exterior/Exterior1.png";
+import img19 from "../../../assets/Commercial/Church/exterior/Exterior1.jpg";
 
 const Portfolio = () => {
-
-  const [flippedCards, setFlippedCards] = useState({});
-
-  const toggleFlip = (key) => {
-    setFlippedCards((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
-  };
-
   const [activeTab, setActiveTab] = useState("ALL");
   const [visibleCount, setVisibleCount] = useState(9);
   const navigate = useNavigate();
 
-  const tabs = ["ALL", "RESIDENTIAL", "COMMERCIAL", "HOSPITALITY", "RELIGIOUS"];
+  const tabs = ["ALL", "RESIDENTIAL", "COMMERCIAL", "HOSPITALITY","RELIGIOUS"];
 
   const images = [
     {
       src: img1,
-      title: "Alli Residential Project",
+      title: "Alli",
       description: "Luxury villa blending modern design with nature.",
       category: "RESIDENTIAL",
       link: "/main/AlliResidential",
@@ -71,7 +53,7 @@ const Portfolio = () => {
     },
     {
       src: img4,
-      title: "Guruvayur Residence",
+      title: "Kalindi",
       description: "Smart residential space optimized for light.",
       category: "RESIDENTIAL",
       link: "/main/Guruvayur",
@@ -120,7 +102,7 @@ const Portfolio = () => {
     },
     {
       src: img10,
-      title: "Bhadram Resort",
+      title: "Bhadram",
       description: "Peace-oriented design surrounded by nature.",
       category: "HOSPITALITY",
       link: "/main/Bhadram",
@@ -134,7 +116,7 @@ const Portfolio = () => {
     },
     {
       src: img12,
-      title: "Pink & purple",
+      title: "Pink & Purples School",
       description: "Pinks & Purple - Educational Landmark",
       category: "COMMERCIAL",
       link: "/main/Pinkpurple",
@@ -149,100 +131,44 @@ const Portfolio = () => {
     {
       src: img14,
       title: "Catherine Castle",
-      description: "Elegant Contemporary Family Residence",
+      description: "Panoramic Terraced Architectural Retreat",
       category: "RESIDENTIAL",
       link: "/main/Castle",
     },
     {
       src: img15,
       title: "Himadri",
-      description: "Elegant Contemporary Family Residence",
+      description: "Hillside Multi-Tiered Luxury Residence",
       category: "RESIDENTIAL",
       link: "/main/Himadri",
     },
     {
       src: img16,
-      title: "Kottagiri",
-      description: "Elegant Contemporary Family Residence",
+      title: "Kotagiri",
+      description: "Panoramic Terraced Architectural Retreat",
       category: "RESIDENTIAL",
       link: "/main/Kottagiri",
     },
     {
       src: img17,
       title: "Krishna",
-      description: "Elegant Contemporary Family Residence",
+      description: "Elevated Nature-Integrated Residence",
       category: "RESIDENTIAL",
       link: "/main/Krishna",
     },
     {
       src: img18,
       title: "NobleResidence",
-      description: "Elegant Contemporary Family Residence",
+      description: "Nature-Integrated Residence",
       category: "RESIDENTIAL",
       link: "/main/NobleResidence",
     },
     {
       src: img19,
-      title: "SunnyResidence",
-      description: "Elegant Contemporary Family Residence",
-      category: "RESIDENTIAL",
-      link: "/main/SunnyResidence",
-    },
-    {
-      src: img20,
-      title: "Najeeb Residence",
-      description: "Elegant Contemporary Family Residence",
-      category: "RESIDENTIAL",
-      link: "/main/NajeebResidence",
-    },
-    {
-      src: img21,
-      title: "Rejeendran Residence",
-      description: "Elegant Contemporary Family Residence",
-      category: "RESIDENTIAL",
-      link: "/main/Rejeendran",
-    },
-    {
-      src: img22,
-      title: "Residence for Mr.Vipin Thomas",
-      description: "Elegant Contemporary Family Residence",
-      category: "RESIDENTIAL",
-      link: "/main/VipinThomas",
-    },
-    {
-      src: img23,
-      title: "Casa Amancay",
-      description: "Premium Villas",
-      category: "COMMERCIAL",
-      link: "/main/Amancay",
-    },
-    {
-      src: img24,
-      title: "ST.FRANCIS OF ASSISI CHURCH",
-      description: "Church",
+      title: "Church",
+      description: "Nature-Integrated Residence",
       category: "RELIGIOUS",
       link: "/main/Church",
-    },
-    {
-      src: img25,
-      title: "Evara Waters",
-      description: "Resort",
-      category: "COMMERCIAL",
-      link: "/main/EvaraWaters",
-    },
-    {
-      src: img26,
-      title: "Water Lilly ",
-      description: "Resort",
-      category: "COMMERCIAL",
-      link: "/main/WaterLilly",
-    },
-    {
-      src: img27,
-      title: "Raffles",
-      description: "Resort",
-      category: "COMMERCIAL",
-      link: "/main/Raffles",
     },
   ];
 
@@ -280,8 +206,8 @@ const Portfolio = () => {
             <span>Our Portfolio</span>
           </div>
 
-          <h1 className="mt-8 text-3xl sm:text-4xl md:text-5xl   tracking-[0.28em] uppercase"
-          >
+          <h1            className="mt-8 text-3xl sm:text-4xl md:text-5xl   tracking-[0.28em] uppercase"
+>
             Portfolio
           </h1>
         </header>
@@ -321,10 +247,11 @@ const Portfolio = () => {
                     setActiveTab(tab);
                     setVisibleCount(9);
                   }}
-                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm md:text-[13px] tracking-[0.18em] uppercase transition-all duration-300 border ${isActive
-                    ? "bg-white text-black border-white shadow-[0_18px_45px_rgba(0,0,0,0.6)]"
-                    : "border-white/25 text-white/65 hover:text-white hover:border-white/60"
-                    }`}
+                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm md:text-[13px] tracking-[0.18em] uppercase transition-all duration-300 border ${
+                    isActive
+                      ? "bg-white text-black border-white shadow-[0_18px_45px_rgba(0,0,0,0.6)]"
+                      : "border-white/25 text-white/65 hover:text-white hover:border-white/60"
+                  }`}
                 >
                   {tab}
                 </button>
@@ -339,27 +266,23 @@ const Portfolio = () => {
             {visibleImages.map((img, idx) => (
               <div
                 key={idx}
-                className="w-full cursor-pointer [perspective:1100px]"
-                onClick={() => toggleFlip(`project-${idx}`)}
+                className="group w-full cursor-pointer [perspective:1100px]"
+                onClick={() => handleImageClick(img.link)}
               >
                 <div
-                  className={`relative w-full aspect-[4/3] transition-transform duration-[800ms]
-                  [transform-style:preserve-3d]
-                  ${flippedCards[`project-${idx}`]
-                      ? "[transform:rotateY(180deg)]"
-                      : ""
-                    }`}
+                  className="relative w-full aspect-[4/3] transition-transform duration-[800ms]
+                             [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
                 >
-                  {/* FRONT */}
+                  {/* FRONT SIDE */}
                   <div
                     className="absolute inset-0 rounded-[28px] overflow-hidden 
-                   shadow-[0_20px_60px_rgba(0,0,0,0.9)] bg-black
-                   border border-white/12 [backface-visibility:hidden]"
+                               shadow-[0_20px_60px_rgba(0,0,0,0.9)] bg-black
+                               border border-white/12 [backface-visibility:hidden]"
                   >
                     <img
                       src={img.src}
                       alt={img.title}
-                      className="w-full h-full object-cover transition-all duration-700"
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.05]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 px-4 pb-4">
@@ -369,14 +292,14 @@ const Portfolio = () => {
                     </div>
                   </div>
 
-                  {/* BACK */}
+                  {/* BACK SIDE */}
                   <div
                     className="absolute inset-0 rounded-[28px] overflow-hidden 
-                   shadow-[0_22px_70px_rgba(0,0,0,1)]
-                   bg-gradient-to-b from-white/10 via-black to-black 
-                   border border-white/15 flex flex-col items-center justify-center
-                   text-center px-5 sm:px-6
-                   [backface-visibility:hidden] [transform:rotateY(180deg)]"
+                               shadow-[0_22px_70px_rgba(0,0,0,1)]
+                               bg-gradient-to-b from-white/10 via-black to-black 
+                               border border-white/15 flex flex-col items-center justify-center
+                               text-center px-5 sm:px-6
+                               [backface-visibility:hidden] [transform:rotateY(180deg)]"
                   >
                     <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-3 tracking-wide">
                       {img.title}

@@ -23,7 +23,7 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "Kumily , Idukki" },
+  { label: "Location", value: "Kumily , Idukki , Kerala" },
   { label: "Type", value: "Residential Complex " },
   { label: "Year", value: "2021" },
   { label: "Sqft", value: "2800" },

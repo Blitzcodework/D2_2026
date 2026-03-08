@@ -52,7 +52,7 @@ const description = [
 const Mano = () => {
   return (
     <ProjectCommonLayout
-      title="Mano Residence"
+      title="Mano"
       bannerImage={bannerImage}
       projectDetails={projectDetails}
       description={description}

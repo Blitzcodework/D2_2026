@@ -25,10 +25,10 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "Thondayad  ,kozhikode" },
+  { label: "Location", value: "Thondayad , Kozhikode , Kerala" },
   { label: "Type", value: "Residential  " },
-  { label: "Year", value: "2025" },
-  { label: "Sqft", value: "3200" },
+  { label: "Year", value: "2019" },
+  { label: "Sqft", value: "3500" },
 ];
 
 // ✅ Project description
@@ -40,7 +40,7 @@ const description = [
 const Amanath = () => {
   return (
     <ProjectCommonLayout
-      title="Amanath Residence"
+      title="Amanath "
       bannerImage={bannerImage}
       projectDetails={projectDetails}
       description={description}

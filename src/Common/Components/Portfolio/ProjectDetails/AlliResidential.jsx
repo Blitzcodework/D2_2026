@@ -33,9 +33,10 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "Kochi, Kerala" },
+  { label: "Location", value: "Chathamaghalam , Kozhikode , Kerala" },
   { label: "Type", value: "Residential Complex" },
-  { label: "Year", value: "2024" },
+  { label: "Year", value: "" },
+  { label: "Sqft", value: "3200" },
 ];
 
 // ✅ Project description

@@ -23,7 +23,7 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "Iringadanpilly" },
+  { label: "Location", value: "Iringadanpilly , Kozhikode , Kerala" },
   { label: "Type", value: "Residential Complex " },
   { label: "Year", value: "2025" },
  

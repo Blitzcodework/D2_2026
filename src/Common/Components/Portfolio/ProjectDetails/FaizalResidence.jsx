@@ -24,7 +24,7 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "Padikkal  ,Malapuram" },
+  { label: "Location", value: "Padikkal , Malapuram , Kerala" },
   { label: "Type", value: "Residential Complex " },
   { label: "Year", value: "2023" },
  
@@ -39,7 +39,7 @@ const description = [
 const FaizalResidence = () => {
   return (
     <ProjectCommonLayout
-      title="Faizal Residence"
+      title="Faizal"
       bannerImage={bannerImage}
       projectDetails={projectDetails}
       description={description}

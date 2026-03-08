@@ -22,7 +22,7 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "Coimbatore" },
+  { label: "Location", value: "Coimbatore , Tamilnadu" },
   { label: "Type", value: "Residential Complex " },
   { label: "Year", value: "2025" },
   { label: "Sqft", value: "12810" },
@@ -38,7 +38,7 @@ const description = [
 const Inea = () => {
   return (
     <ProjectCommonLayout
-      title="Inea Residence"
+      title="Inea"
       bannerImage={bannerImage}
       projectDetails={projectDetails}
       description={description}

@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCommonLayout from "../../Components/Portfolio/ProjectDetails/ProjectCommonLayout";
-import bannerImage from "../../../assets/Commercial/Amancay/Exterior/Exterior1.png"
+import bannerImage from "../../../assets/Commercial/Church/exterior/Exterior1.jpg"
 import g1 from "../../../assets/Commercial/Church/exterior/Exterior1.jpg"
 import g2 from "../../../assets/Commercial/Church/exterior/Exterior2.jpg"
 import g3 from "../../../assets/Commercial/Church/exterior/Exterior3.jpg"

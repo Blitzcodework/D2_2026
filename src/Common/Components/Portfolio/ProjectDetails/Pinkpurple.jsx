@@ -48,7 +48,7 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "Govindapuram,Calicut " },
+  { label: "Location", value: "Govindapuram , Calicut , Kerala" },
   { label: "Type", value: "Educational Building" },
   { label: "Year", value: "2025" },
   { label: "Sqft", value: "2700" },
@@ -64,7 +64,7 @@ const description = [
 const Pinkpurple = () => {
   return (
     <ProjectCommonLayout
-      title="Inea Residence"
+      title="Pink & Purples School"
       bannerImage={bannerImage}
       projectDetails={projectDetails}
       description={description}

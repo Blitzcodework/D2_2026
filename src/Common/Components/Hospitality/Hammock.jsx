@@ -19,10 +19,10 @@ const galleryImages = [
 ];
 
 const projectDetails = [
-  { label: "Location", value: "kolagappara , wayanad" },
+  { label: "Location", value: "kolagappara , Wayanad , Kerala" },
   { label: "Type", value: "Hospitality Project" },
-  { label: "Year", value: "2024" },
-  { label: "Sqft", value: "3684" },
+  { label: "Year", value: "" },
+  { label: "Sqft", value: "" },
 ];
 
 const description = [
