@@ -1,12 +1,11 @@
 import React from "react";
 import ProjectCommonLayout from "./ProjectCommonLayout";
-import bannerImage from "../../../../assets/Residential/amaanath/Exterior1.jpg"
-import g1 from "../../../../assets/Residential/amaanath/Exterior2.jpg"
-import g2 from "../../../../assets/Residential/amaanath/Exterior3.jpg"
-import g3 from "../../../../assets/Residential/amaanath/Exterior4.jpg"
-import g4 from "../../../../assets/Residential/amaanath/Exterior5.jpg"
-import g5 from "../../../../assets/Residential/amaanath/Exterior6.jpg"
-import g6 from "../../../../assets/Residential/amaanath/Exterior7.jpg"
+import bannerImage from "../../../../assets/Residential/amaanath/Exterior1.png"
+import g1 from "../../../../assets/Residential/amaanath/Exterior1.png"
+import g2 from "../../../../assets/Residential/amaanath/Exterior2.png"
+import g3 from "../../../../assets/Residential/amaanath/Exterior3.png"
+
+
 
 
 
@@ -17,10 +16,7 @@ import g6 from "../../../../assets/Residential/amaanath/Exterior7.jpg"
 const galleryImages = [
   { src: g1, alt: "Exterior View", category: "Exterior" },
   { src: g2, alt: "Interior Hall", category: "Exterior" },
-  { src: g3, alt: "Living Room", category: "Exterior" },
-  { src: g4, alt: "Garden Area", category: "Exterior" },
-  { src: g5, alt: "Lobby Design", category: "Exterior" },
-  { src: g6, alt: "Full View", category: "All" },
+  { src: g3, alt: "Full View", category: "Exterior" },
 ];
 
 // ✅ Project details

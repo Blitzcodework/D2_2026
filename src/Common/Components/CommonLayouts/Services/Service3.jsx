@@ -1,7 +1,7 @@
 import React from "react";
 import ServiceLayout from "./ServiceLayout";
-import uimg1 from "../../../../assets/Images/Designs/Interior/i1.jpg";
-import uimg2 from "../../../../assets/Images/Designs/Interior/i2.jpg";
+import uimg1 from "../../../../assets/Images/Designs/Interior/i1.jpeg";
+import uimg2 from "../../../../assets/Images/Designs/Interior/i2.png";
 
 const Service3 = () => {
   return (

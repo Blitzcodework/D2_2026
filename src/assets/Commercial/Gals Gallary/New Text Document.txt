@@ -1,0 +1,7 @@
+project name -Gals Gallery
+site -   Mavoor road , Kozhikkode , Kerala 
+sqft - 
+type - Commercial
+year of completion  -2021
+
+Description :

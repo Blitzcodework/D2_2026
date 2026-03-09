@@ -2,12 +2,12 @@ import React from "react";
 import DetailCommonLayout from "../../../Common/Components/ServiceDetails/DetailCommonLayout";
 
 // ✅ Import all images properly
-import heroImage from "../../../assets/Images/Designs/Architecture/aimg1.jpg";
+import heroImage from "../../../assets/Images/Designs/Architecture/a6.jpg";
 import g1 from "../../../assets/Images/Designs/Architecture/a1.jpg";
 import g2 from "../../../assets/Images/Designs/Architecture/a2.jpg";
 import g3 from "../../../assets/Images/Designs/Architecture/a3.jpg";
 import g4 from "../../../assets/Images/Designs/Architecture/a4.jpg";
-import g5 from "../../../assets/Images/Designs/Architecture/a5.jpg";
+import g5 from "../../../assets/Images/Designs/Architecture/f10.jpg";
 import g6 from "../../../assets/Images/Designs/Architecture/a6.jpg";
 
 

@@ -1,0 +1,12 @@
+project :Thanalidam
+type : Public Project
+Year :Methottu tazham ,kozhikode Kerala
+Area :262.02 sqft
+Year : 2024
+
+Discription  
+
+to create a vibrant and inclusive age-friendly public space that caters to the needs and pref-
+erences of diverse age groups while incorporating a touch of vernacular style. The design
+should prioritize accessibility, comfort, and cultural sensitivity, fostering a sense of commu-
+nity and well-being at Kommeri.

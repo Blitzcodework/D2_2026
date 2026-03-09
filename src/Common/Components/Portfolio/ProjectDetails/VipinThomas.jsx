@@ -19,7 +19,7 @@ const galleryImages = [
 
 // ✅ Project details
 const projectDetails = [
-  { label: "Location", value: "Kakkanad , Ernakulam" },
+  { label: "Location", value: "Kakkanad , Ernakulam , Kerala" },
   { label: "Type", value: "Residential Complex " },
   { label: "Year", value: "2020" },
   { label: "Sqft", value: "2144" },

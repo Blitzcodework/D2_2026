@@ -33,7 +33,7 @@ const description = [
 const ShekharResidence = () => {
   return (
     <ProjectCommonLayout
-      title="Shekhar"
+      title="Niharika"
       bannerImage={bannerImage}
       projectDetails={projectDetails}
       description={description}

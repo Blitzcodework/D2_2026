@@ -1,24 +1,37 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // ✅ Correct import
-import signatureVideo from "../../../assets/Videos/sign.mp4"; // ✅ Path correct
+import { useNavigate } from "react-router-dom";
+import signatureVideo from "../../../assets/Videos/sign.mp4";
 
 const Signature = () => {
-  const navigate = useNavigate(); // ✅ lowercase
+  const navigate = useNavigate();
 
   const handleVideoEnd = () => {
-    navigate("/logo"); // ✅ Redirect to Logo.jsx page
+    navigate("/logo");
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-black">
+    <div className="w-screen h-screen bg-black flex items-center justify-center overflow-hidden">
+
       <video
         src={signatureVideo}
         autoPlay
         muted
         playsInline
-        onEnded={handleVideoEnd} // ✅ Runs when video finishes
-        className="w-2/3 md:w-1/2 lg:w-1/3 object-contain rounded-xl shadow-lg"
+        preload="auto"
+        onEnded={handleVideoEnd}
+        className="
+          w-[90%]
+          sm:w-[70%]
+          md:w-[55%]
+          lg:w-[40%]
+          xl:w-[30%]
+          max-w-[700px]
+          object-contain
+          rounded-xl
+          shadow-2xl
+        "
       />
+
     </div>
   );
 };

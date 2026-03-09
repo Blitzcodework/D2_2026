@@ -11,8 +11,8 @@ import Samishra from "../../../assets/Images/Events/Shamisra/Samishra1.jpg";
 const events = [
   {
     title: "Onam Celebration",
-    date: "Sep 14, 2024",
-    time: "10:00 AM",
+    // date: "Sep 14, 2024",
+    // time: "10:00 AM",
     location: "Kozhikode",
     description:
       "Celebrate Onam with cultural programs, floral designs, and traditional Kerala feast.",
@@ -21,8 +21,8 @@ const events = [
   },
   {
     title: "Women’s Empowerment",
-    date: "March 8, 2024",
-    time: "10:00 AM",
+    // date: "March 8, 2024",
+    // time: "10:00 AM",
     location: "Kozhikode",
     description:
       "An inspiring event celebrating strength, unity, and leadership of women.",
@@ -31,8 +31,8 @@ const events = [
   },
   {
     title: "Diwali Celebration",
-    date: "31 Oct, 2024",
-    time: "10:00 AM",
+    // date: "31 Oct, 2024",
+    // time: "10:00 AM",
     location: "Kozhikode",
     description:
       "Experience the festival of lights with diya ceremonies, music, and dance.",
@@ -40,9 +40,9 @@ const events = [
     route: "/main/EventDiwali",
   },
   {
-    title: "Samishra",
-    date: "Sep 14, 2024",
-    time: "10:00 AM",
+    title: "Samizra",
+    // date: "Sep 14, 2024",
+    // time: "10:00 AM",
     location: "Kozhikode",
     description:
       "A cultural blend of tradition, colors, and rhythmic celebrations.",
@@ -119,15 +119,15 @@ const Event = () => {
 
                 {/* Info Section */}
                 <div className="space-y-2 text-gray-300 text-[13px] mb-4">
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <FaCalendarAlt className="text-white/80" size={12} />
                     <span>{event.date}</span>
-                  </div>
+                  </div> */}
 
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <FaClock className="text-white/80" size={12} />
                     <span>{event.time}</span>
-                  </div>
+                  </div> */}
 
                   {/* Location + Button Same Line */}
                   <div className="flex items-center justify-between mt-2">

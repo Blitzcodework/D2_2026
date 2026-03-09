@@ -1,0 +1,15 @@
+project :Ente veedu
+type : Public Project 
+     : 28 VILLAS
+locATION :kASARGOD , Kerala
+Area :--- 1400 SQFT X 28 =39200 SQFT
+Year : 2024
+
+Discription  
+"Introducing 'Ente Veedu,' a residential
+marvel in the heart of Kasargod. This ar-
+chitectural masterpiece spans an area of
+approximately 1400 sq. ft., offering a living
+space that seamlessly blends modern
+design with the charm of regional aes-
+thetics.

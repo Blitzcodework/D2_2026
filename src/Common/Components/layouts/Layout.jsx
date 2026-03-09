@@ -1,5 +1,4 @@
-// Components/Layout.jsx
-import React, { useState } from "react";
+import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
@@ -8,23 +7,13 @@ import { AnimatePresence, motion } from "framer-motion";
 const Layout = () => {
   const location = useLocation();
 
-  // ✅ Contact modal state moved here
-  const [isContactOpen, setIsContactOpen] = useState(false);
-
-  const openContact = () => setIsContactOpen(true);
-  const closeContact = () => setIsContactOpen(false);
-
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
-      {/* ✅ Navbar stays static, but can open/close modal */}
-      <Navbar
-        isContactOpen={isContactOpen}
-        onOpenContact={openContact}
-        onCloseContact={closeContact}
-      />
 
-      {/* Animated page transitions */}
-      <main className="flex-1">
+      <Navbar />
+
+      {/* PAGE CONTENT */}
+      <main className="flex-1 pt-[96px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}
@@ -38,8 +27,7 @@ const Layout = () => {
         </AnimatePresence>
       </main>
 
-      {/* ✅ Footer can open the same modal */}
-      <Footer onOpenContact={openContact} />
+      <Footer />
     </div>
   );
 };

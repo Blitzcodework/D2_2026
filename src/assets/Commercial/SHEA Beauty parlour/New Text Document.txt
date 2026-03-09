@@ -1,0 +1,5 @@
+project name - Shea
+site -  Calicut, kerala
+sqft - 1000
+type - Commercial
+year of completion  -2017

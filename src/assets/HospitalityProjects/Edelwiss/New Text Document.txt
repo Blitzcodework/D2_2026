@@ -1,0 +1,7 @@
+project : Edelweiss
+type : Resort
+Year :Banasura,Waynad kerala
+Area :92665 sqft
+Year : 2023
+
+description : Edelweiss Luxury Resort and spa is located in the encampment overlooking the majestic Banasura Dam, surrounded almost entirely with water and rich flora of Wayanad.

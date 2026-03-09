@@ -21,6 +21,7 @@ const galleryImages = [
   { src: g4, alt: "Garden Area", category: "Interior" },
   { src: g5, alt: "Lobby Design", category: "Interior" },
   { src: g6, alt: "Lobby Design", category: "Interior" },  
+
  
 ];
 
@@ -41,7 +42,7 @@ const description = [
 const Kottagiri = () => {
   return (
     <ProjectCommonLayout
-      title="Bungalow at Kottagiri"
+      title="Bungalow at Kotagiri"
       bannerImage={bannerImage}
       projectDetails={projectDetails}
       description={description}

@@ -16,37 +16,18 @@ const Navbar = () => {
     };
   }, []);
 
+  /* LOCK SCROLL WHEN MOBILE MENU OPEN */
   useEffect(() => {
-  if (isMobileMenuOpen) {
-    const scrollY = window.scrollY;
-
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.left = "0";
-    document.body.style.right = "0";
-    document.body.style.width = "100%";
-  } else {
-    const scrollY = document.body.style.top;
-    
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.left = "";
-    document.body.style.right = "";
-    document.body.style.width = "";
-
-    if (scrollY) {
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
     }
-  }
 
-  return () => {
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.left = "";
-    document.body.style.right = "";
-    document.body.style.width = "";
-  };
-}, [isMobileMenuOpen]);
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMobileMenuOpen]);
 
   const openDropdown = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -91,7 +72,7 @@ const Navbar = () => {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-md">
+      <nav className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10 py-3.5">
 
           {/* LOGO */}
@@ -116,7 +97,7 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* SERVICES DROPDOWN (DESKTOP) */}
+            {/* SERVICES */}
             <div
               className="relative"
               onMouseEnter={openDropdown}
@@ -148,7 +129,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* DESKTOP CONTACT */}
+          {/* CONTACT BUTTON */}
           <div className="hidden lg:flex">
             <button
               onClick={handleContactClick}
@@ -158,7 +139,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* MOBILE TOGGLE */}
+          {/* MOBILE MENU BUTTON */}
           <div className="lg:hidden">
             <button onClick={toggleMobileMenu} className="text-white text-2xl">
               {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
@@ -169,57 +150,58 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {isMobileMenuOpen && (
-<div className="fixed inset-0 z-40 bg-black/95 lg:hidden">
-  <div className="mt-[88px] px-6 py-6 space-y-3 overflow-y-auto h-[calc(100vh-88px)]">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              to={link.path}
-              onClick={closeMobileMenu}
-              className="block py-3 text-white/90 text-sm uppercase"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="fixed inset-0 z-40 bg-black/95 lg:hidden">
+          <div className="mt-[88px] px-6 py-6 space-y-3 overflow-y-auto h-[calc(100vh-88px)]">
 
-          {/* MOBILE SERVICES */}
-          <div className="border-t border-white/10 pt-3">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.path}
+                onClick={closeMobileMenu}
+                className="block py-3 text-white/90 text-sm uppercase"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            {/* MOBILE SERVICES */}
+            <div className="border-t border-white/10 pt-3">
+              <button
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                className="flex justify-between items-center w-full py-3 text-white/90 text-sm uppercase"
+              >
+                Services
+                <FaChevronDown
+                  className={`text-xs transition-transform ${
+                    isServicesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {isServicesOpen && (
+                <div className="pl-4 space-y-2">
+                  {serviceLinks.map((service) => (
+                    <Link
+                      key={service.label}
+                      to={service.path}
+                      onClick={closeMobileMenu}
+                      className="block py-2 text-white/70 text-sm"
+                    >
+                      {service.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <button
-              onClick={() => setIsServicesOpen(!isServicesOpen)}
-              className="flex justify-between items-center w-full py-3 text-white/90 text-sm uppercase"
+              onClick={handleContactClick}
+              className="w-full mt-4 rounded-full bg-gradient-to-r from-[#FF8C00] to-[#FF7000] py-3 text-sm font-semibold uppercase text-white"
             >
-              Services
-              <FaChevronDown
-                className={`text-xs transition-transform ${
-                  isServicesOpen ? "rotate-180" : ""
-                }`}
-              />
+              Contact Us
             </button>
 
-            {isServicesOpen && (
-              <div className="pl-4 space-y-2">
-                {serviceLinks.map((service) => (
-                  <Link
-                    key={service.label}
-                    to={service.path}
-                    onClick={closeMobileMenu}
-                    className="block py-2 text-white/70 text-sm"
-                  >
-                    {service.label}
-                  </Link>
-                ))}
-              </div>
-            )}
           </div>
-
-          {/* MOBILE CONTACT */}
-          <button
-            onClick={handleContactClick}
-            className="w-full mt-4 rounded-full bg-gradient-to-r from-[#FF8C00] to-[#FF7000] py-3 text-sm font-semibold uppercase text-white"
-          >
-            Contact Us
-          </button>
-        </div>
         </div>
       )}
 

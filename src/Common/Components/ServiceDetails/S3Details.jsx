@@ -3,9 +3,9 @@ import DetailCommonLayout from "../../../Common/Components/ServiceDetails/Detail
 
 // ✅ Import all images properly
 import heroImage from "../../../assets/Images/Designs/Interior/iimg1.png";
-import g1 from "../../../assets/Images/Designs/Interior/i1.jpg";
-import g2 from "../../../assets/Images/Designs/Interior/i2.jpg";
-import g3 from "../../../assets/Images/Designs/Interior/i3.jpg";
+import g1 from "../../../assets/Images/Designs/Interior/i1.jpeg";
+import g2 from "../../../assets/Images/Designs/Interior/i2.png";
+import g3 from "../../../assets/Images/Designs/Interior/i3.png";
 import g4 from "../../../assets/Images/Designs/Interior/i4.png";
 import g5 from "../../../assets/Images/Designs/Interior/i5.png";
 

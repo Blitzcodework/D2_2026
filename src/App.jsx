@@ -1,31 +1,18 @@
+
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import WhatsAppButton from "./Components/WhatsAppButton";
-import Amanath from "./Common/Components/Portfolio/ProjectDetails/Amanath";
-import Castle from "./Common/Components/Portfolio/ProjectDetails/Castle";
-import Himadri from "./Common/Components/Portfolio/ProjectDetails/Himadri";
-import Kottagiri from "./Common/Components/Portfolio/ProjectDetails/Kottagiri";
-import Krishna from "./Common/Components/Portfolio/ProjectDetails/Krishna";
-import NobleResidence from "./Common/Components/Portfolio/ProjectDetails/NobleResidence";
-import SunnyResidence from "./Common/Components/Portfolio/ProjectDetails/SunnyResidence";
-import NajeebResidence from "./Common/Components/Portfolio/ProjectDetails/NajeebResidence";
-import Rejeendran from "./Common/Components/Portfolio/ProjectDetails/Rejeendran";
-import VipinThomas from "./Common/Components/Portfolio/ProjectDetails/VipinThomas";
-import Amancay from "./Common/Components/Commercial/Amancay";
-import Church from "./Common/Components/Religious/Church";
-import EvaraWaters from "./Common/Components/Commercial/EvaraWaters";
-import WaterLilly from "./Common/Components/Commercial/WaterLilly";
-import Raffles from "./Common/Components/Commercial/Raffles";
-import Arancia from "./Common/Components/Hospitality/Arancia";
-import Bhadram from "./Common/Components/Hospitality/Bhadram";
-import Hammock from "./Common/Components/Hospitality/Hammock";
-import ScrollToTop from "./Common/Components/ScrollToTop/ScrollToTop"
+import ScrollToTop from "./Common/Components/ScrollToTop/ScrollToTop";
 
 
 /* ================== LAZY IMPORTS ================== */
+
+/* SPLASH */
 const Signature = lazy(() => import("./Common/Components/Animations/Signature"));
 const Logo = lazy(() => import("./Common/Components/Animations/Logo"));
+
+/* LAYOUT */
 const Layout = lazy(() => import("./Common/Components/layouts/Layout"));
 const LandingPage = lazy(() => import("./Common/Components/Home/LandingPage"));
 const Aboutd2 = lazy(() => import("./Common/Components/AboutD2/Aboutd2"));
@@ -62,17 +49,62 @@ const ShekharResidence = lazy(() => import("./Common/Components/Portfolio/Projec
 const Mano = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/Mano"));
 const Pinkpurple = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/Pinkpurple"));
 
+const Amanath = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/Amanath"));
+const Castle = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/Castle"));
+const Himadri = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/Himadri"));
+const Kottagiri = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/Kottagiri"));
+const Krishna = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/Krishna"));
+const NobleResidence = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/NobleResidence"));
+const SunnyResidence = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/SunnyResidence"));
+const NajeebResidence = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/NajeebResidence"));
+const Rejeendran = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/Rejeendran"));
+const VipinThomas = lazy(() => import("./Common/Components/Portfolio/ProjectDetails/VipinThomas"));
+
+/* COMMERCIAL */
+const Amancay = lazy(() => import("./Common/Components/Commercial/Amancay"));
+const EvaraWaters = lazy(() => import("./Common/Components/Commercial/EvaraWaters"));
+const WaterLilly = lazy(() => import("./Common/Components/Commercial/WaterLilly"));
+const Raffles = lazy(() => import("./Common/Components/Commercial/Raffles"));
+const Apex = lazy(() => import("./Common/Components/Commercial/Apex"));
+const GalsGallary = lazy(() => import("./Common/Components/Commercial/GalsGallary"));
+const MarattTechpark = lazy(() => import("./Common/Components/Commercial/MarattTechpark"));
+const RayoMartin = lazy(() => import("./Common/Components/Commercial/RayoMartin"));
+const Beautyparlour = lazy(() => import("./Common/Components/Commercial/Beautyparlour"));
+const UrbanChic = lazy(() => import("./Common/Components/Commercial/UrbanChic"));
+const XYBERA = lazy(() => import("./Common/Components/Commercial/XYBERA"));
+
+/* RELIGIOUS */
+const Church = lazy(() => import("./Common/Components/Religious/Church"));
 
 
-/* TEAM & OTHERS */
+const BusTerminal = lazy(() => import("./Common/Components/PublicProjects/BusTerminal"));
+const EnteVeedu = lazy(() => import("./Common/Components/PublicProjects/EnteVeedu"));
+const Thanalidam = lazy(() => import("./Common/Components/PublicProjects/Thanalidam"));
+
+/* HOSPITALITY */
+const Arancia = lazy(() => import("./Common/Components/Hospitality/Arancia"));
+const Bhadram = lazy(() => import("./Common/Components/Hospitality/Bhadram"));
+const Hammock = lazy(() => import("./Common/Components/Hospitality/Hammock"));
+const Edelweiss = lazy(() => import("./Common/Components/Hospitality/Edelweiss"));
+const Elaris = lazy(() => import("./Common/Components/Hospitality/Elaris"));
+const Prithvi = lazy(() => import("./Common/Components/Hospitality/Prithvi"));
+
+/* TEAM */
 const TeamD2 = lazy(() => import("./Common/Components/Team/TeamD2"));
 const Testimonial = lazy(() => import("./Common/Testimonial/Testimonial"));
 
 /* ================== LOADER ================== */
+
 const PageLoader = () => (
   <div className="flex justify-center items-center min-h-screen text-white">
     Loading...
   </div>
+);
+
+const Load = (Component) => (
+  <Suspense fallback={<PageLoader />}>
+    <Component />
+  </Suspense>
 );
 
 const App = () => {
@@ -83,100 +115,102 @@ const App = () => {
       <Routes>
 
         {/* SPLASH */}
-        <Route
-          path="/"
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <Signature />
-            </Suspense>
-          }
-        />
+        <Route path="/" element={Load(Signature)} />
+        <Route path="/logo" element={Load(Logo)} />
 
-        <Route
-          path="/logo"
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <Logo />
-            </Suspense>
-          }
-        />
+        {/* MAIN */}
+        <Route path="/main" element={Load(Layout)}>
 
-        {/* MAIN LAYOUT (NO LOADER RELOAD) */}
-        <Route
-          path="/main"
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <Layout />
-            </Suspense>
-          }
-        >
-          <Route index element={
-            <Suspense fallback={<PageLoader />}>
-              <LandingPage />
-            </Suspense>
-          } />
-
-          <Route path="aboutd2" element={<Suspense fallback={<PageLoader />}><Aboutd2 /></Suspense>} />
+          <Route index element={Load(LandingPage)} />
+          <Route path="aboutd2" element={Load(Aboutd2)} />
 
           {/* SERVICES */}
-          <Route path="Service1" element={<Suspense fallback={<PageLoader />}><Service1 /></Suspense>} />
-          <Route path="Service2" element={<Suspense fallback={<PageLoader />}><Service2 /></Suspense>} />
-          <Route path="Service3" element={<Suspense fallback={<PageLoader />}><Service3 /></Suspense>} />
-          <Route path="Service4" element={<Suspense fallback={<PageLoader />}><Service4 /></Suspense>} />
+          <Route path="Service1" element={Load(Service1)} />
+          <Route path="Service2" element={Load(Service2)} />
+          <Route path="Service3" element={Load(Service3)} />
+          <Route path="Service4" element={Load(Service4)} />
 
           {/* SERVICE DETAILS */}
-          <Route path="S1Details" element={<Suspense fallback={<PageLoader />}><S1Details /></Suspense>} />
-          <Route path="S2Details" element={<Suspense fallback={<PageLoader />}><S2Details /></Suspense>} />
-          <Route path="S3Details" element={<Suspense fallback={<PageLoader />}><S3Details /></Suspense>} />
-          <Route path="S4Details" element={<Suspense fallback={<PageLoader />}><S4Details /></Suspense>} />
+          <Route path="S1Details" element={Load(S1Details)} />
+          <Route path="S2Details" element={Load(S2Details)} />
+          <Route path="S3Details" element={Load(S3Details)} />
+          <Route path="S4Details" element={Load(S4Details)} />
 
           {/* EVENTS */}
-          <Route path="Event" element={<Suspense fallback={<PageLoader />}><Event /></Suspense>} />
-          <Route path="EventOnam" element={<Suspense fallback={<PageLoader />}><EventOnam /></Suspense>} />
-          <Route path="WomenEmpowerment" element={<Suspense fallback={<PageLoader />}><WomenEmpowerment /></Suspense>} />
-          <Route path="EventDiwali" element={<Suspense fallback={<PageLoader />}><Diwali /></Suspense>} />
-          <Route path="EventSamishra" element={<Suspense fallback={<PageLoader />}><Samisra /></Suspense>} />
+          <Route path="Event" element={Load(Event)} />
+          <Route path="EventOnam" element={Load(EventOnam)} />
+          <Route path="WomenEmpowerment" element={Load(WomenEmpowerment)} />
+          <Route path="EventDiwali" element={Load(Diwali)} />
+          <Route path="EventSamishra" element={Load(Samisra)} />
 
           {/* PORTFOLIO */}
-          <Route path="Portfolio" element={<Suspense fallback={<PageLoader />}><Portfolio /></Suspense>} />
-          <Route path="AlliResidential" element={<Suspense fallback={<PageLoader />}><AlliResidential /></Suspense>} />
-          <Route path="Ema" element={<Suspense fallback={<PageLoader />}><Ema /></Suspense>} />
-          <Route path="FaizalResidence" element={<Suspense fallback={<PageLoader />}><FaizalResidence /></Suspense>} />
-          <Route path="Guruvayur" element={<Suspense fallback={<PageLoader />}><Guruvayur /></Suspense>} />
-          <Route path="Inea" element={<Suspense fallback={<PageLoader />}><Inea /></Suspense>} />
-          <Route path="Sirena" element={<Suspense fallback={<PageLoader />}><Sirena /></Suspense>} />
-          <Route path="Yaraa" element={<Suspense fallback={<PageLoader />}><Yaraa /></Suspense>} />
-          <Route path="ShekharResidence" element={<Suspense fallback={<PageLoader />}><ShekharResidence /></Suspense>} />
-          <Route path="Mano" element={<Suspense fallback={<PageLoader />}><Mano /></Suspense>} />
-          <Route path="Pinkpurple" element={<Suspense fallback={<PageLoader />}><Pinkpurple /></Suspense>} />
-          <Route path="Amanath" element={<Suspense fallback={<PageLoader />}><Amanath /></Suspense>} />
-          <Route path="Castle" element={<Suspense fallback={<PageLoader />}><Castle /></Suspense>} />
-          <Route path="Himadri" element={<Suspense fallback={<PageLoader />}><Himadri /></Suspense>} />
-          <Route path="Kottagiri" element={<Suspense fallback={<PageLoader />}><Kottagiri /></Suspense>} />
-          <Route path="Krishna" element={<Suspense fallback={<PageLoader />}><Krishna /></Suspense>} />
-          <Route path="NobleResidence" element={<Suspense fallback={<PageLoader />}><NobleResidence /></Suspense>} />
-          <Route path="SunnyResidence" element={<Suspense fallback={<PageLoader />}><SunnyResidence /></Suspense>} />
-          <Route path="NajeebResidence" element={<Suspense fallback={<PageLoader />}><NajeebResidence /></Suspense>} />
-          <Route path="Rejeendran" element={<Suspense fallback={<PageLoader />}><Rejeendran /></Suspense>} />
-          <Route path="VipinThomas" element={<Suspense fallback={<PageLoader />}><VipinThomas /></Suspense>} />
-          <Route path="Amancay" element={<Suspense fallback={<PageLoader />}><Amancay /></Suspense>} />
-          <Route path="Church" element={<Suspense fallback={<PageLoader />}><Church /></Suspense>} />
-          <Route path="EvaraWaters" element={<Suspense fallback={<PageLoader />}><EvaraWaters /></Suspense>} />
-          <Route path="WaterLilly" element={<Suspense fallback={<PageLoader />}><WaterLilly /></Suspense>} />
-          <Route path="Raffles" element={<Suspense fallback={<PageLoader />}><Raffles /></Suspense>} />
-          <Route path="Arancia" element={<Suspense fallback={<PageLoader />}><Arancia /></Suspense>} />
-          <Route path="Bhadram" element={<Suspense fallback={<PageLoader />}><Bhadram /></Suspense>} />
-          <Route path="Hammock" element={<Suspense fallback={<PageLoader />}><Hammock /></Suspense>} />
+          <Route path="Portfolio" element={Load(Portfolio)} />
+          <Route path="AlliResidential" element={Load(AlliResidential)} />
+          <Route path="Ema" element={Load(Ema)} />
+          <Route path="FaizalResidence" element={Load(FaizalResidence)} />
+          <Route path="Guruvayur" element={Load(Guruvayur)} />
+          <Route path="Inea" element={Load(Inea)} />
+          <Route path="Sirena" element={Load(Sirena)} />
+          <Route path="Yaraa" element={Load(Yaraa)} />
+          <Route path="ShekharResidence" element={Load(ShekharResidence)} />
+          <Route path="Mano" element={Load(Mano)} />
+          <Route path="Pinkpurple" element={Load(Pinkpurple)} />
+
+          <Route path="Amanath" element={Load(Amanath)} />
+          <Route path="Castle" element={Load(Castle)} />
+          <Route path="Himadri" element={Load(Himadri)} />
+          <Route path="Kottagiri" element={Load(Kottagiri)} />
+          <Route path="Krishna" element={Load(Krishna)} />
+          <Route path="NobleResidence" element={Load(NobleResidence)} />
+          <Route path="SunnyResidence" element={Load(SunnyResidence)} />
+          <Route path="NajeebResidence" element={Load(NajeebResidence)} />
+          <Route path="Rejeendran" element={Load(Rejeendran)} />
+          <Route path="VipinThomas" element={Load(VipinThomas)} />
+
+          {/* COMMERCIAL */}
+          <Route path="Amancay" element={Load(Amancay)} />
+          <Route path="EvaraWaters" element={Load(EvaraWaters)} />
+          <Route path="WaterLilly" element={Load(WaterLilly)} />
+          <Route path="Raffles" element={Load(Raffles)} />
+          <Route path="Apex" element={Load(Apex)} />
+          <Route path="GalsGallary" element={Load(GalsGallary)} />
+          <Route path="MarattTechpark" element={Load(MarattTechpark)} />
+          <Route path="RayoMartin" element={Load(RayoMartin)} />
+          <Route path="Beautyparlour" element={Load(Beautyparlour)} />
+          <Route path="UrbanChic" element={Load(UrbanChic)} />
+          <Route path="XYBERA" element={Load(XYBERA)} />
+
+          {/* RELIGIOUS */}
+          <Route path="Church" element={Load(Church)} />
+
+          {/* HOSPITALITY */}
+          <Route path="Arancia" element={Load(Arancia)} />
+          <Route path="Bhadram" element={Load(Bhadram)} />
+          <Route path="Hammock" element={Load(Hammock)} />
 
 
-          {/* TEAM & TESTIMONIAL */}
-          <Route path="TeamD2" element={<Suspense fallback={<PageLoader />}><TeamD2 /></Suspense>} />
-          <Route path="Testimonial" element={<Suspense fallback={<PageLoader />}><Testimonial /></Suspense>} />
+
+          <Route path="BusTerminal" element={Load(BusTerminal)} />
+          <Route path="EnteVeedu" element={Load(EnteVeedu)} />
+          <Route path="Thanalidam" element={Load(Thanalidam)} />
+
+
+          <Route path="Edelweiss" element={Load(Edelweiss)} />
+          <Route path="Elaris" element={Load(Elaris)} />
+          <Route path="Prithvi" element={Load(Prithvi)} />
+
+
+          {/* TEAM */}
+          <Route path="TeamD2" element={Load(TeamD2)} />
+          <Route path="Testimonial" element={Load(Testimonial)} />
+
         </Route>
       </Routes>
+
       <WhatsAppButton />
     </Router>
   );
 };
 
 export default App;
+

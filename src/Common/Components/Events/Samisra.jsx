@@ -15,7 +15,7 @@ const galleryImages = [g1, g2, g3, g4, g5];
 const Samisra = () => {
     return (
         <DetailCommonLayout
-            title="Samishra 2024"
+            title="Samizra 2024"
             heroImage={heroImage}
             description={`“Where rhythm meets reason, and color meets cause –
 Samishra blooms without a pause.

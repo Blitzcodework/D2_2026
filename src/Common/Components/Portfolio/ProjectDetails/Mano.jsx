@@ -14,6 +14,7 @@ import g8 from "../../../../assets/Residential/mr.murali/interior/Interior7.png"
 import g9 from "../../../../assets/Residential/mr.murali/interior/Interior8.png";
 import g10 from "../../../../assets/Residential/mr.murali/interior/Interior9.png";
 import g11 from "../../../../assets/Residential/mr.murali/interior/Interior10.png";
+import g12 from "../../../../assets/Residential/mr.murali/exterior/Exterior2.png";
 
 
 // ✅ Gallery Images (Correct Categories)
@@ -30,6 +31,7 @@ const galleryImages = [
   { src: g9, alt: "Interior Lighting", category: "Interior" },
   { src: g10, alt: "Interior Wall Finish", category: "Interior" },
   { src: g11, alt: "Interior Full View", category: "Interior" },
+  { src: g12, alt: "Interior Full View", category: "Exterior" },
 ];
 
 
@@ -44,7 +46,7 @@ const projectDetails = [
 
 // ✅ Project Description
 const description = [
-  "This residence blends traditional architectural elements with modern conveniences, offering a peaceful and functional living space. The combination of well-planned landscaping, classic roof design, and refined interiors creates a sophisticated and timeless aesthetic ideal for family living."
+  "The Mano Residence near Chennai embodies a sophisticated response to a topical martime environment A sophisticated palette of weather resilient natural stone, warm wood accents, and clean modern finishes ensures the structure ages gracefully ín the humid coastal clímate."
 ];
 
 
