@@ -10,10 +10,12 @@ const ArchitectureSlider = () => {
   const [current, setCurrent] = useState(0);
 
   const images = [
-    "/images/slide.png",
-    "/images/slide1.png",
-    "/images/slide2.png",
-    "/images/slide3.png",
+    "/images/slide.jpeg",
+    "/images/slide1.jpeg",
+    "/images/slide2.jpeg",
+    "/images/slide3.jpeg",
+    "/images/slide4.jpeg",
+
   ];
 
   useEffect(() => {
@@ -21,7 +23,7 @@ const ArchitectureSlider = () => {
       setCurrent((prev) =>
         prev === images.length - 1 ? 0 : prev + 1
       );
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -41,11 +43,10 @@ const ArchitectureSlider = () => {
         {images.map((img, index) => (
           <div
             key={index}
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
-              index === current
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${index === current
                 ? "opacity-100"
                 : "opacity-0"
-            }`}
+              }`}
           >
             <img
               src={img}
@@ -61,11 +62,10 @@ const ArchitectureSlider = () => {
             <button
               key={index}
               onClick={() => handleDotClick(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === current
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === current
                   ? "bg-white scale-125"
                   : "bg-gray-500"
-              }`}
+                }`}
             />
           ))}
         </div>

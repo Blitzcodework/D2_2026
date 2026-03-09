@@ -1,24 +1,21 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaTimes, FaUpload } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
-const ContactModal = ({
-  isOpen,
-  onClose,
-  toEmail = "jithinpbabu7020@gmail.com",
-}) => {
+const ContactModal = ({ isOpen, onClose }) => {
   const dialogRef = useRef(null);
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     mobile: "",
-    projectType: "", // ✅ default empty for placeholder
+    projectType: "",
     location: "",
     projectSize: "",
     budget: "",
     message: "",
-    files: null,
   });
 
   const projectTypes = useMemo(
@@ -26,54 +23,73 @@ const ContactModal = ({
     []
   );
 
-  /* 🔹 Unified input/select style (SAME HEIGHT) */
   const fieldClass =
-    "w-full h-11 rounded-lg px-3 bg-zinc-900 border border-white/10 text-white text-sm " +
-    "focus:ring-2 focus:ring-[#FF8C00]/70 outline-none";
+    "w-full h-11 rounded-lg px-3 bg-zinc-900 border border-white/10 text-white text-sm focus:ring-2 focus:ring-[#FF8C00]/70 outline-none";
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "files") {
-      setFormData((p) => ({ ...p, files }));
-    } else {
-      setFormData((p) => ({ ...p, [name]: value }));
-    }
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
-  /* ESC close */
   useEffect(() => {
     if (!isOpen) return;
+
     const esc = (e) => e.key === "Escape" && onClose?.();
     window.addEventListener("keydown", esc);
+
     setTimeout(() => dialogRef.current?.focus(), 0);
+
     return () => window.removeEventListener("keydown", esc);
   }, [isOpen, onClose]);
 
-  const buildMailto = () => {
-    const subject = `New Project Enquiry — ${formData.projectType || "Category"}`;
-    const body = `
-Full Name: ${formData.fullName}
-Email: ${formData.email}
-Mobile: ${formData.mobile}
-Project Type: ${formData.projectType || "Not specified"}
-Location: ${formData.location}
-Project Size: ${formData.projectSize}
-Estimated Budget: ${formData.budget}
-Files: ${formData.files ? formData.files.length + " file(s)" : "No"}
-
-Message:
-${formData.message}
-    `.trim();
-
-    return `mailto:${toEmail}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.location.href = buildMailto();
-    onClose?.();
+    setLoading(true);
+
+    const templateParams = {
+      fullName: formData.fullName,
+      email: formData.email,
+      mobile: formData.mobile,
+      projectType: formData.projectType,
+      location: formData.location,
+      projectSize: formData.projectSize,
+      budget: formData.budget,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        "service_lb1lv7m",
+        "template_pr3futf",
+        templateParams,
+        "6IX_alklnUpImOQk1"
+      )
+      .then(() => {
+        alert("Message sent successfully ✅");
+
+        setFormData({
+          fullName: "",
+          email: "",
+          mobile: "",
+          projectType: "",
+          location: "",
+          projectSize: "",
+          budget: "",
+          message: "",
+        });
+
+        setLoading(false);
+        onClose?.();
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Failed to send message ❌");
+        setLoading(false);
+      });
   };
 
   return (
@@ -85,13 +101,11 @@ ${formData.message}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          {/* Backdrop */}
           <button
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={onClose}
           />
 
-          {/* Modal */}
           <motion.div
             ref={dialogRef}
             tabIndex={-1}
@@ -100,11 +114,9 @@ ${formData.message}
             animate={{ scale: 1, y: 0, opacity: 1 }}
             exit={{ scale: 0.97, y: 10, opacity: 0 }}
           >
-            {/* Accent */}
             <div className="h-1 bg-gradient-to-r from-[#FF8C00] to-[#FF5500]" />
 
             <div className="p-4 sm:p-5">
-              {/* Close */}
               <button
                 onClick={onClose}
                 className="absolute right-3 top-3 rounded-full p-2 hover:bg-white/10"
@@ -122,7 +134,7 @@ ${formData.message}
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-3">
-                {/* Full Name + Email */}
+
                 <div className="grid sm:grid-cols-2 gap-3">
                   <Field label="Full Name">
                     <input
@@ -146,7 +158,6 @@ ${formData.message}
                   </Field>
                 </div>
 
-                {/* Mobile + Location */}
                 <div className="grid sm:grid-cols-2 gap-3">
                   <Field label="Mobile">
                     <input
@@ -169,22 +180,19 @@ ${formData.message}
                   </Field>
                 </div>
 
-                {/* Project Type + Size */}
                 <div className="grid sm:grid-cols-2 gap-3">
                   <Field label="Project Type">
                     <select
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleChange}
-                      className={fieldClass + " appearance-none"}
+                      className={fieldClass}
                     >
                       <option value="" disabled>
                         Category
                       </option>
                       {projectTypes.map((type) => (
-                        <option key={type} value={type}>
-                          {type}
-                        </option>
+                        <option key={type}>{type}</option>
                       ))}
                     </select>
                   </Field>
@@ -199,7 +207,6 @@ ${formData.message}
                   </Field>
                 </div>
 
-                {/* Budget */}
                 <Field label="Estimated Budget">
                   <input
                     name="budget"
@@ -210,30 +217,6 @@ ${formData.message}
                   />
                 </Field>
 
-                {/* File Upload */}
-                <div>
-                  <label className="block text-xs mb-1 text-white/70">
-                    Upload Files (optional)
-                  </label>
-                  <label className="flex items-center gap-2 cursor-pointer rounded-lg px-3 h-11
-                                    bg-zinc-900 border border-white/10 hover:border-[#FF8C00]/60">
-                    <FaUpload className="text-sm" />
-                    <span className="text-xs text-white/70">
-                      {formData.files
-                        ? `${formData.files.length} file(s) selected`
-                        : "Upload drawings / plans"}
-                    </span>
-                    <input
-                      type="file"
-                      name="files"
-                      multiple
-                      onChange={handleChange}
-                      className="hidden"
-                    />
-                  </label>
-                </div>
-
-                {/* Message */}
                 <textarea
                   name="message"
                   rows={2}
@@ -241,19 +224,17 @@ ${formData.message}
                   placeholder="Message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full rounded-lg px-3 py-2.5 bg-zinc-900 border border-white/10 text-white
-                             focus:ring-2 focus:ring-[#FF8C00]/70 outline-none resize-none"
+                  className="w-full rounded-lg px-3 py-2.5 bg-zinc-900 border border-white/10 text-white focus:ring-2 focus:ring-[#FF8C00]/70 outline-none resize-none"
                 />
 
-                {/* Buttons */}
                 <div className="flex gap-2 pt-1">
                   <motion.button
                     type="submit"
                     whileTap={{ scale: 0.97 }}
-                    className="flex-1 rounded-lg py-2.5 text-sm font-semibold
-                               bg-gradient-to-r from-[#FF8C00] to-[#FF5500]"
+                    disabled={loading}
+                    className="flex-1 rounded-lg py-2.5 text-sm font-semibold bg-gradient-to-r from-[#FF8C00] to-[#FF5500]"
                   >
-                    Send
+                    {loading ? "Sending..." : "Send"}
                   </motion.button>
 
                   <button
@@ -264,6 +245,7 @@ ${formData.message}
                     Cancel
                   </button>
                 </div>
+
               </form>
             </div>
           </motion.div>
@@ -273,7 +255,6 @@ ${formData.message}
   );
 };
 
-/* 🔹 Field Wrapper */
 const Field = ({ label, children }) => (
   <div>
     <label className="block text-xs mb-1 text-white/70">{label}</label>
