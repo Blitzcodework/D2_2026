@@ -15,7 +15,7 @@ const galleryImages = [g1, g2, g3, g4, g5, g6];
 const S1Details = () => {
   return (
     <DetailCommonLayout
-      title="Urban Design"
+      title="Master plannings and Urban design"
       heroImage={heroImage}
       description="Urban Design redefines contemporary cityscapes through a seamless blend of functionality, aesthetics, and livability. Strategically planned, it integrates open spaces, smart mobility, and sustainable infrastructure to foster vibrant, connected communities."
       subSectionTitle="Our Vision & Goals"

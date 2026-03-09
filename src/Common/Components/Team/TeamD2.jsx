@@ -12,6 +12,7 @@ import prathyush from "../../../assets/Images/Team/prathysuh.jpeg";
 import staff from "../../../assets/Images/Team/staff.jpg";
 import Udhav from "../../../assets/Images/Team/Udhav Ajith-JUNIOR ARCHITECT.jpeg";
 import Limisha from "../../../assets/Images/Team/Limsha P - JUNIOR ARCHITECT.jpeg";
+import Akshara from "../../../assets/Images/Team/Akshara.jpeg";
 
 import divakaran from "../../../assets/Images/Team/divakaran.jpg";
 import deepak from "../../../assets/Images/Team/Deepak.jpg";
@@ -83,6 +84,13 @@ const Team = () => {
         "Turning concepts into structured 3D visuals and professionally designed presentation layouts.",
     },
     {
+      name: "Akshara",
+      title: "Junior Architect",
+      img: Akshara,
+      description:
+      "Bringing ideas to life through structured 3D visuals and refined presentation design."
+    },
+    {
       name: "Jithin C",
       title: "Site Engineer",
       img: jithin,
@@ -96,6 +104,13 @@ const Team = () => {
       description:
         "Oversees on-site activities, quality checks, and timelines during construction.",
     },
+      {
+      name: "Prathyush K P",
+      title: "Draftsman",
+      img: prathyush,
+      description:
+        "Prepares detailed architectural drawings, technical drafts, and CAD documentation to support project execution.",
+    },
     {
       name: "Pradeep Kumar",
       title: "Manager",
@@ -103,13 +118,7 @@ const Team = () => {
       description:
         "Handles client coordination, project scheduling, and office operations.",
     },
-    {
-      name: "Prathyush K P",
-      title: "Draftsman",
-      img: prathyush,
-      description:
-        "Prepares detailed architectural drawings, technical drafts, and CAD documentation to support project execution.",
-    },
+  
     {
       name: "Girija",
       title: "Supporting Staff",

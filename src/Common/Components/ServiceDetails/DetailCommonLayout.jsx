@@ -27,17 +27,18 @@ const DetailCommonLayout = ({
           <p className="text-[11px] tracking-[0.24em] uppercase text-white/55 mb-2 text-center md:text-left">
             Service Detail
           </p>
+
           <h1 className="text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-[3rem] font-light leading-tight">
             {title}
           </h1>
         </header>
 
-        {/* HERO IMAGE — FULL COVER */}
+        {/* HERO IMAGE */}
         <section className="mt-10 md:mt-12">
           <div className="relative rounded-3xl overflow-hidden border border-white/12 bg-black shadow-[0_24px_70px_rgba(0,0,0,0.9)]">
 
-            {/* FIXED HEIGHT BOX + FULL-SIZE IMAGE COVER */}
-            <div className="w-full h-[260px] sm:h-[320px] md:h-[380px] lg:h-[460px]">
+            {/* Perfect Landing Height */}
+            <div className="w-full h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh]">
               <img
                 src={heroImage}
                 alt={title}
@@ -49,13 +50,16 @@ const DetailCommonLayout = ({
             <div className="absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-white/20 via-white/8 to-transparent opacity-75 pointer-events-none" />
 
             {/* Bottom caption */}
-            <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black via-black/85 to-transparent px-5 flex items-center justify-between text-[11px] text-white/70">
+            <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black via-black/85 to-transparent px-5 flex items-center justify-between text-[11px] text-white/70">
               <span className="tracking-[0.16em] uppercase">
                 Featured Visual
               </span>
+
               <span className="flex items-center gap-2">
                 <span className="inline-block h-[6px] w-[6px] rounded-full bg-white/70" />
-                <span className="tracking-[0.14em] uppercase">{title}</span>
+                <span className="tracking-[0.14em] uppercase">
+                  {title}
+                </span>
               </span>
             </div>
           </div>
@@ -66,6 +70,7 @@ const DetailCommonLayout = ({
           <h2 className="text-sm tracking-[0.2em] uppercase text-white/55 mb-4">
             Overview
           </h2>
+
           <p className="text-sm sm:text-base md:text-lg text-white/80 leading-relaxed italic max-w-3xl mx-auto">
             {description}
           </p>
@@ -73,11 +78,14 @@ const DetailCommonLayout = ({
 
         {/* SUB SECTION */}
         <section className="mt-14 md:mt-16 grid md:grid-cols-[1fr_1.4fr] gap-10 md:gap-14 items-start">
+          
           <div>
             <h3 className="text-base sm:text-lg md:text-xl font-semibold tracking-[0.2em] uppercase mb-2">
               {subSectionTitle}
             </h3>
+
             <div className="h-[2px] w-16 bg-white/65 mb-4 rounded-full" />
+
             <p className="text-xs text-white/50 tracking-[0.18em] uppercase">
               Key Information
             </p>
@@ -96,21 +104,26 @@ const DetailCommonLayout = ({
         {/* GALLERY */}
         {galleryImages?.length > 0 && (
           <section className="mt-12">
+
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h3 className="text-lg sm:text-xl md:text-2xl tracking-[0.16em] uppercase">
                   Gallery
                 </h3>
+
                 <p className="mt-2 text-xs text-white/55 tracking-[0.14em] uppercase">
                   Visual references
                 </p>
               </div>
+
               <p className="text-xs text-white/45 tracking-[0.16em] uppercase">
                 {galleryImages.length} Image{galleryImages.length > 1 && "s"}
               </p>
             </div>
 
+            {/* Gallery Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+              
               {galleryImages.map((img, index) => (
                 <div
                   key={index}
@@ -132,6 +145,7 @@ const DetailCommonLayout = ({
                   </span>
                 </div>
               ))}
+
             </div>
           </section>
         )}
@@ -145,6 +159,7 @@ const DetailCommonLayout = ({
             ← Previous
           </button>
         </div>
+
       </div>
     </div>
   );
